@@ -1,32 +1,18 @@
 # Homebrew formula for aclaude-a (alpha channel)
 # Updated automatically by CI on every push to main
+# macOS only (arm64). Linux users: use install.sh or build from source.
 
 class AclaudeA < Formula
   desc "Opinionated wrapper for Claude Code with persona theming (alpha channel)"
   homepage "https://github.com/arcaven/aclaude"
-  version "alpha-20260318-054000-8238cef"
+  version "alpha-20260318-054913-fa9082c"
   license "MIT"
 
-  on_macos do
-    url "https://github.com/arcaven/aclaude/releases/download/alpha-20260318-054000-8238cef/aclaude-a-darwin-arm64"
-    sha256 "19abfe06f4ef149ba00345e9bf69de6ae8495f427b8aaf6e4accfa0f9bba980c"
-  end
-
-  on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/arcaven/aclaude/releases/download/alpha-20260318-054000-8238cef/aclaude-a-linux-arm64"
-      sha256 "SHA256_LINUX_ARM64_PLACEHOLDER"
-    else
-      url "https://github.com/arcaven/aclaude/releases/download/alpha-20260318-054000-8238cef/aclaude-a-linux-amd64"
-      sha256 "SHA256_LINUX_AMD64_PLACEHOLDER"
-    end
-  end
+  url "https://github.com/arcaven/aclaude/releases/download/alpha-20260318-054913-fa9082c/aclaude-a-darwin-arm64"
+  sha256 "d56ffee1db1ee258ed96c446d358ca861bc6d39d7d43c8945a21c433b1c6763a"
 
   def install
-    cpu = Hardware::CPU.arm? ? "arm64" : "amd64"
-    os = OS.mac? ? "darwin" : "linux"
-    binary = "aclaude-a-#{os}-#{cpu}"
-    bin.install binary => "aclaude-a"
+    bin.install "aclaude-a-darwin-arm64" => "aclaude-a"
   end
 
   def caveats
