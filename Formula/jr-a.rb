@@ -1,15 +1,15 @@
 class JrA < Formula
   desc "Fast, keyboard-driven Jira CLI with offline support and fuzzy search (alpha channel)"
   homepage "https://github.com/arcavenae/jira-cli"
-  version "alpha-20260326.4"
+  version "alpha-20260326.5"
   license "MIT"
 
   if Hardware::CPU.arm?
-    url "https://github.com/arcavenae/jira-cli/releases/download/alpha-20260326.4/jr-a-darwin-arm64"
-    sha256 "53bf0cdf8c0f4e59ddbfc9e51a226e7f3886687bf7acb34ec31495c1c0de6f2e"
+    url "https://github.com/arcavenae/jira-cli/releases/download/alpha-20260326.5/jr-a-darwin-arm64"
+    sha256 "8ec415e9cdd475f3e19b7697a25e153564266cc66f15c002e9f1654565cd2efc"
   else
-    url "https://github.com/arcavenae/jira-cli/releases/download/alpha-20260326.4/jr-a-darwin-amd64"
-    sha256 "345e2e99f540a6740720adf3ef35b43a363b634829b9cabda82433d88e87883c"
+    url "https://github.com/arcavenae/jira-cli/releases/download/alpha-20260326.5/jr-a-darwin-amd64"
+    sha256 "994f9feffc4273bf3b6999a12dd3efa8a0b751bbd310b7b41535a4b92cd4f1fd"
   end
 
   def install
